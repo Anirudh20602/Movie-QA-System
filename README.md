@@ -1,6 +1,6 @@
 # NLP Homework 4: Movie Question-Answering System
 
-**Student**: [Your Name]  
+**Student**: Anirudh Krishna 
 **Course**: Natural Language Processing  
 **Assignment**: Homework 4 - RAG and LLM-based QA System
 
@@ -38,10 +38,9 @@ This project implements a movie question-answering system using Retrieval-Augmen
 
 ## Files
 
-- **`homework4_colab_fixed.ipynb`**: Main Jupyter notebook (optimized for Google Colab)
-- **`homework4_colab_optimized.py`**: Python script version of the notebook
+- **`movie_QA_system.ipynb`**: Main Jupyter notebook (optimized for Google Colab)
 - **`IMDB_top_10000_07132023.csv`**: Dataset (10,000 IMDB movies)
-- **`Homework 4.pdf`**: Assignment instructions
+- **`movie_index/`**: Persisted vector index directory (generated after first run)
 - **`README.md`**: This file
 
 ## Setup Instructions
@@ -56,7 +55,7 @@ This project implements a movie question-answering system using Retrieval-Augmen
 1. **Upload Notebook**:
    - Go to https://colab.research.google.com/
    - File → Upload notebook
-   - Select `homework4_colab_fixed.ipynb`
+   - Select `movie_QA_system.ipynb`
 
 2. **Enable GPU**:
    - Runtime → Change runtime type
@@ -88,7 +87,7 @@ This project implements a movie question-answering system using Retrieval-Augmen
 
 2. **Run Jupyter Notebook**:
    ```bash
-   jupyter notebook homework4_colab_fixed.ipynb
+   jupyter notebook movie_QA_system.ipynb
    ```
 
 ## Technical Architecture
@@ -168,12 +167,6 @@ Format Response       Format Response
 Initially, we attempted to use T5-base for code generation. However, T5-base (220M parameters) proved too small for reliable code generation, frequently producing syntactically invalid code. 
 
 **Decision**: Use template-based code generation for reliability.
-
-**Justification**:
-- ✅ 100% guaranteed valid code
-- ✅ Covers all required query types
-- ✅ Instant execution (no model inference)
-- ✅ Production-ready reliability
 
 **For Production**: A larger model like CodeLlama (7B+), GPT-4, or Claude would be more appropriate for arbitrary code generation.
 
